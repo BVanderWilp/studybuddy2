@@ -1,0 +1,12 @@
+#logoutButton {
+    white-space: normal;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
