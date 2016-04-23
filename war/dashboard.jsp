@@ -148,7 +148,7 @@ session.setAttribute("email", user.getEmail());
                         <a href="settings.jsp"><i class="fa fa-fw fa-gear"></i> Settings</a>
                     </li>
                     <li>
-                        <a href="inbox.jsp"><i class="fa fa-fw fa-gear"></i> Inbox</a>
+                        <a href="inbox.jsp"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                     </li>
 <!--
                     <li>

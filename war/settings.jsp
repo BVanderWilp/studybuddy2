@@ -150,6 +150,9 @@ pageContext.setAttribute("email", user.getEmail());
                     <li>
                         <a href="settings.jsp"><i class="fa fa-fw fa-gear"></i> Settings</a>
                     </li>
+                    <li>
+                        <a href="inbox.jsp"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                    </li>                    
 <!--
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
