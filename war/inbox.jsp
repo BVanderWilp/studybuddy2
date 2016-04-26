@@ -146,12 +146,12 @@ session.setAttribute("email", user.getEmail());
                         <%
                         if (user.getIsTutor()) {
                         %> 
-                        Student Matches</a>
+                        	Student Matches</a>
                         <%
                         }
                         else {
                         %>
-                        Tutor Matches</a>
+                        	Tutor Matches</a>
                         <%
                         }
                         %>
