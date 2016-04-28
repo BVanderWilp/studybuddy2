@@ -20,6 +20,7 @@ public class Tutor extends Person implements Subject{
 	
 	@Id Long id;
 	private double price;
+	private double limit;
 	private ArrayList<String> subscribers = new ArrayList<String>();
 	
 	/**
@@ -29,6 +30,12 @@ public class Tutor extends Person implements Subject{
 	public void setPrice(double number){ 
 		price = number;
 		String msg = new String(firstName + " " + lastName + " has updated their price to $" + String.format( "%.2f", number) + "/hr.");
+		notifyObservers(msg);
+	}
+	
+	public void setLimit(double number){  //add this method
+		limit = number;
+		String msg = new String(firstName + " " + lastName + " has updated their limit to " + String.format( "%.2f", number));
 		notifyObservers(msg);
 	}
 	
@@ -65,6 +72,8 @@ public class Tutor extends Person implements Subject{
 	 * @return The price of the tutor.
 	 */
 	public double getPrice(){ return price;}
+	
+	public double getLimit(){ return limit;}
 	
 	/**
 	 * Adds a student to the list of this tutor's subscribers.

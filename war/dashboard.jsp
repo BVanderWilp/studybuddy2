@@ -188,8 +188,17 @@ session.setAttribute("email", user.getEmail());
                         	<div class="col-sm-offset-1 col-sm-10 col-sm-offset-1">
                         		<h4>Your current hourly rate is 
                         		<%
-                        		Tutor t = (Tutor)user;
-                        		out.print("$" + String.format( "%.2f", t.getPrice()) + "/hr");
+                        			Tutor t = (Tutor)user;
+                        			out.print("$" + String.format( "%.2f", t.getPrice()) + "/hr");
+                        		%>
+                        		<br></br>
+                        		You are tutoring 
+                        		<%
+                        			out.print(String.format( "%d", t.getSubscribers().size()));
+                        		%> 
+                        		students out of 
+                        		<%
+                        			out.print(String.format( "%.0f", t.getLimit()));
                         		%>
                         		</h4>
                         		<h5>An email will be sent to your subscribed students when your hourly rate is updated.</h5>

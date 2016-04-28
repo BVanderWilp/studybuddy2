@@ -70,14 +70,17 @@ $(function(){
 		}
 	})
 	
-	// form validation for tutor sign up
+// form validation for tutor sign up
 	$(document.body).on('click', '#tutorSignUpSubmit', function(){
-		if($('#tutorFirstName').val().length > 0 && $('#tutorLastName').val().length > 0 && $('#tutorEmail').val().length > 0 && $('#tutorRate').val().length > 0) {
-			if ($('#tutorPassword1').val() == $('#tutorPassword2').val() || !isNaN($("#tutorRate").val())) {
+		if($('#tutorFirstName').val().length > 0 && $('#tutorLastName').val().length > 0 && $('#tutorEmail').val().length > 0 && $('#tutorRate').val().length > 0 && $('#tutorLimit').val().length > 0) {
+			if ($('#tutorPassword1').val() == $('#tutorPassword2').val() || !isNaN($("#tutorRate").val()) || !isNaN($("#tutorLimit").val())) {
 				$('#tutorSignUp').submit();
 			}
 			else if (isNaN($("#tutorRate").val())) {
 				$('#tutor-passwords-dont-match').append("Hourly Rate must be a number.");
+			}
+			else if (isNaN($("#tutorLimit").val())) {
+				$('#tutor-passwords-dont-match').append("Limit must be a number.");
 			}
 			else {
 				$('#tutor-passwords-dont-match').append("Passwords do not match.");

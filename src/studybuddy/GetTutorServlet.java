@@ -36,7 +36,7 @@ public class GetTutorServlet extends HttpServlet {
 			int i;
 			for(i = 0; i < tutors.size(); i++)
 			{
-				if(!s.alreadyTried(tutors.get(i).getEmail()) && !s.getSubs().contains(tutors.get(i).getEmail()) && mutualSubject(tutors.get(i),s))
+				if(!s.alreadyTried(tutors.get(i).getEmail()) && !s.getSubs().contains(tutors.get(i).getEmail()) && mutualSubject(tutors.get(i),s) && tutors.get(i).getSubscribers().size() < tutors.get(i).getLimit())
 				{
 					t = tutors.get(i);
 					s.addTried(t.getEmail());
@@ -44,6 +44,7 @@ public class GetTutorServlet extends HttpServlet {
 					req.setAttribute("tutor_first_name", t.getFirstName());
 					req.setAttribute("tutor_last_name", t.getLastName());
 					req.setAttribute("tutor_price","$" + t.getPrice() + "/hr");
+					req.setAttribute("tutor_limit", t.getLimit()); 
 					req.setAttribute("tutor_email", t.getEmail());
 					ArrayList<String> subjects = t.getSubjects();
     				String subjectString = "";
@@ -73,6 +74,7 @@ public class GetTutorServlet extends HttpServlet {
 				req.setAttribute("tutor_first_name", "No more tutors to display.");
 				req.setAttribute("tutor_last_name", " ");
 				req.setAttribute("tutor_price", " ");
+				req.setAttribute("tutor_limit", " "); 
 			}
 		}
 		ServletContext sc = getServletContext();

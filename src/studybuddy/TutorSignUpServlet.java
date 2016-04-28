@@ -58,12 +58,16 @@ public class TutorSignUpServlet extends HttpServlet {
 		String priceString = req.getParameter("price");
 		double price = Double.parseDouble(priceString);
 		
+		String limitString = req.getParameter("limit"); 
+		double limit = Double.parseDouble(limitString);
+				
 		Tutor profile = new Tutor();
 		profile.setFirstName(firstName);
 		profile.setLastName(lastName);
 		profile.setEmail(email);
 		profile.setPassword(password);
 		profile.setPrice(price);
+		profile.setLimit(limit);
 		profile.setIsTutor(true);
 		ofy().save().entity(profile).now();
 		Cookie cookie = new Cookie("email", email);

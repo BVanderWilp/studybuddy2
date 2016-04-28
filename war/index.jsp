@@ -108,6 +108,10 @@
 					Hourly Rate
 					<input type='number' min='0' id='tutorRate' name='price' class='form-control' required>
 				</div>
+				<div class='form-group'>
+					Limits
+					<input type='number' min='0' id='tutorLimit' name='limit' class='form-control' required>
+				</div>
 				<div id="tutor-passwords-dont-match"></div>
 				<div class='form-group'>
 					Password
