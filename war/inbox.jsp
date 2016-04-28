@@ -251,9 +251,6 @@ session.setAttribute("email", user.getEmail());
 
 		              %>
 		            </li>
-		            <li class="next">
-		                <a href="/archives.jsp">View All Posts &rarr;</a>
-		            </li>
 		         </ul>
                 </div>
                 <!-- /.row -->
